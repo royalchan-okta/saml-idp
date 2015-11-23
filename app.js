@@ -325,7 +325,9 @@ app.use(function(req, res, next){
         issuer: data.issuer,
         destination: data.destination,
         acsUrl: data.assertionConsumerServiceURL,
-        forceAuthn: data.forceAuthn
+        forceAuthn: data.forceAuthn,
+        sigAlg: req.query.SigAlg,
+        signature: req.query.Signature
       };
       console.log('Received AuthnRequest => \n', req.authnRequest);
     }
